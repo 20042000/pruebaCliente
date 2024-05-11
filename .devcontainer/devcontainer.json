@@ -1,0 +1,33 @@
+{
+  // Name this configuration
+  "name": "Codespace para Habitacion",
+  // Use the base codespace image
+  "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
+ 
+  "remoteUser": "codespace",
+  "overrideCommand": false,
+  // Add the IDs of extensions you want installed when the container is created.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "vmware.vscode-boot-dev-pack"
+      ]
+    }
+  },
+
+  "dockerComposeCommand": "up -d",
+  "dockerCompose": {
+    "services": {
+      "mongodb": {
+        "image": "postgres:latest",
+        "ports": ["5432:5432"],
+        "environment": {
+          "POSTGRES_DB": "clientedb",
+          "POSTGRES_USER": "root",
+          "POSTGRES_PASSWORD": "root postgres"
+        }
+      }
+    }
+  }
+}
