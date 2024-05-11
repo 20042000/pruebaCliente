@@ -14,20 +14,5 @@
         "vmware.vscode-boot-dev-pack"
       ]
     }
-  },
-
-  "dockerComposeCommand": "up -d",
-  "dockerCompose": {
-    "services": {
-      "mongodb": {
-        "image": "postgres:latest",
-        "ports": ["5432:5432"],
-        "environment": {
-          "POSTGRES_DB": "clientedb",
-          "POSTGRES_USER": "root",
-          "POSTGRES_PASSWORD": "root postgres"
-        }
-      }
-    }
   }
 }
